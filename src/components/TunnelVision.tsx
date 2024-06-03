@@ -3,11 +3,11 @@ import React, {
   RefObject,
   useEffect,
   useRef,
-} from "react";
+} from "react"
 
 interface ITunnelVisionAreaProps extends ComponentPropsWithoutRef<"div"> {
-  size?: number;
-  isEnabled?: boolean;
+  size?: number
+  isEnabled?: boolean
 }
 
 export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
@@ -18,61 +18,61 @@ export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
     style,
     children,
     ...rest
-  } = props;
+  } = props
 
-  const element = useRef<HTMLDivElement>(null);
+  const element = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const setStyling = (
       element: RefObject<HTMLDivElement>,
       x: number,
-      y: number
+      y: number,
     ) => {
       element.current?.style.setProperty(
         "background",
-        `radial-gradient(circle ${size}px at ${x}px ${y}px, transparent ${size}px, rgb(0, 0, 0) ${size}px)`
-      );
-      element.current?.style.setProperty("transition", "background 0.05s");
-    };
+        `radial-gradient(circle ${size}px at ${x}px ${y}px, transparent ${size}px, rgb(0, 0, 0) ${size}px)`,
+      )
+      element.current?.style.setProperty("transition", "background 0.05s")
+    }
 
     const handlePointer = (event: PointerEvent) => {
-      if (!isEnabled) return;
+      if (!isEnabled) return
       requestAnimationFrame(() => {
-        if (!element.current) return;
+        if (!element.current) return
 
-        const x = event.clientX;
-        const y = event.clientY;
+        const x = event.clientX
+        const y = event.clientY
 
-        setStyling(element, x, y);
-      });
-    };
+        setStyling(element, x, y)
+      })
+    }
 
     const handleTouch = (event: TouchEvent) => {
-      if (!isEnabled) return;
+      if (!isEnabled) return
       requestAnimationFrame(() => {
-        if (!element.current) return;
+        if (!element.current) return
 
-        const x = event.targetTouches[0].clientX;
-        const y = event.targetTouches[0].clientY;
+        const x = event.targetTouches[0].clientX
+        const y = event.targetTouches[0].clientY
 
-        setStyling(element, x, y);
-      });
-    };
+        setStyling(element, x, y)
+      })
+    }
 
-    window.addEventListener("pointermove", handlePointer);
-    window.addEventListener("pointerleave", handlePointer);
-    window.addEventListener("touchstart", handleTouch);
-    window.addEventListener("touchmove", handleTouch);
-    window.addEventListener("touchend", handleTouch);
+    window.addEventListener("pointermove", handlePointer)
+    window.addEventListener("pointerleave", handlePointer)
+    window.addEventListener("touchstart", handleTouch)
+    window.addEventListener("touchmove", handleTouch)
+    window.addEventListener("touchend", handleTouch)
 
     return () => {
-      window.removeEventListener("pointermove", handlePointer);
-      window.removeEventListener("pointerleave", handlePointer);
-      window.removeEventListener("touchstart", handleTouch);
-      window.removeEventListener("touchmove", handleTouch);
-      window.removeEventListener("touchend", handleTouch);
-    };
-  }, []);
+      window.removeEventListener("pointermove", handlePointer)
+      window.removeEventListener("pointerleave", handlePointer)
+      window.removeEventListener("touchstart", handleTouch)
+      window.removeEventListener("touchmove", handleTouch)
+      window.removeEventListener("touchend", handleTouch)
+    }
+  }, [])
 
   return (
     <div className="relative" style={{ display: "grid" }}>
@@ -87,5 +87,5 @@ export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
         {children}
       </div>
     </div>
-  );
+  )
 }
