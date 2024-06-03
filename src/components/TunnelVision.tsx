@@ -5,12 +5,12 @@ import React, {
   useRef,
 } from "react";
 
-interface ILanternAreaProps extends ComponentPropsWithoutRef<"div"> {
+interface ITunnelVisionAreaProps extends ComponentPropsWithoutRef<"div"> {
   size?: number;
   isEnabled?: boolean;
 }
 
-export default function LanternArea(props: ILanternAreaProps) {
+export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
   const {
     size = 50,
     isEnabled = true,
@@ -23,16 +23,14 @@ export default function LanternArea(props: ILanternAreaProps) {
   const element = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const setLanternStyling = (
+    const setStyling = (
       element: RefObject<HTMLDivElement>,
       x: number,
       y: number
     ) => {
       element.current?.style.setProperty(
         "background",
-        `radial-gradient(circle ${size}px at ${x}px ${y}px, transparent ${size}px, rgba(0, 0, 0, 0.9) ${
-          size * 2
-        }px)`
+        `radial-gradient(circle ${size}px at ${x}px ${y}px, transparent ${size}px, rgb(0, 0, 0) ${size}px)`
       );
       element.current?.style.setProperty("transition", "background 0.05s");
     };
@@ -45,7 +43,7 @@ export default function LanternArea(props: ILanternAreaProps) {
         const x = event.clientX;
         const y = event.clientY;
 
-        setLanternStyling(element, x, y);
+        setStyling(element, x, y);
       });
     };
 
@@ -57,7 +55,7 @@ export default function LanternArea(props: ILanternAreaProps) {
         const x = event.targetTouches[0].clientX;
         const y = event.targetTouches[0].clientY;
 
-        setLanternStyling(element, x, y);
+        setStyling(element, x, y);
       });
     };
 

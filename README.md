@@ -1,1 +1,1 @@
-# react-lantern
+# react-tunnel-vision

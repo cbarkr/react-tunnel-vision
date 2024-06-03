@@ -1,7 +1,7 @@
 {
-  "name": "@cbarkr/react-lantern",
+  "name": "@cbarkr/react-tunnel-vision",
   "version": "1.0.0",
-  "description": "A mouse/touch-tracing lantern effect for React components",
+  "description": "A mouse/touch-tracing tunnel vision effect for React components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cbarkr/react-lantern.git"
+    "url": "git+https://github.com/cbarkr/react-tunnel-vision.git"
   },
   "keywords": [
     "react",
@@ -24,9 +24,9 @@
   "author": "Callum Barker",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cbarkr/react-lantern/issues"
+    "url": "https://github.com/cbarkr/react-tunnel-vision/issues"
   },
-  "homepage": "https://github.com/cbarkr/react-lantern#readme",
+  "homepage": "https://github.com/cbarkr/react-tunnel-vision#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.8",
     "@rollup/plugin-node-resolve": "^15.2.3",

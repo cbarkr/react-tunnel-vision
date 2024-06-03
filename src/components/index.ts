@@ -1,1 +1,1 @@
-export { default as Lantern } from "./Lantern";
+export { default as TunnelVision } from "./TunnelVision";
