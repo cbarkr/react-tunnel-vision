@@ -1,5 +1,5 @@
 {
-  "name": "@cbarkr/react-tunnel-vision",
+  "name": "react-tunnel-vision",
   "version": "1.0.0",
   "description": "A mouse/touch-tracing tunnel vision effect for React components",
   "author": "Callum Barker",
