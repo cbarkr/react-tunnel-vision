@@ -10,7 +10,7 @@ interface ITunnelVisionAreaProps extends ComponentPropsWithoutRef<"div"> {
   isEnabled?: boolean
 }
 
-export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
+const TunnelVisionArea: React.FunctionComponent = (props: ITunnelVisionAreaProps) => {
   const {
     size = 50,
     isEnabled = true,
@@ -89,3 +89,5 @@ export default function TunnelVisionArea(props: ITunnelVisionAreaProps) {
     </div>
   )
 }
+
+export default TunnelVisionArea
