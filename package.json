@@ -12,9 +12,6 @@
     "url": "https://github.com/cbarkr/react-tunnel-vision/issues"
   },
   "homepage": "https://github.com/cbarkr/react-tunnel-vision#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/cbarkr"
-  },
   "keywords": [
     "react",
     "lantern",
