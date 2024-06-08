@@ -7,6 +7,7 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
     "rollup": "rollup -c",
@@ -28,6 +29,9 @@
     "url": "https://github.com/cbarkr/react-tunnel-vision/issues"
   },
   "homepage": "https://github.com/cbarkr/react-tunnel-vision#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/cbarkr"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.8",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -38,6 +42,7 @@
     "rollup": "^4.18.0",
     "rollup-plugin-dts": "^6.1.1",
     "tailwindcss": "^3.4.3",
+    "tslib": "^2.6.3",
     "typescript": "^5.4.5"
   }
 }
