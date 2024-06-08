@@ -1,1 +1,1 @@
-export { default as TunnelVision } from "./TunnelVision"
+export { default as TunnelVisionArea } from "./TunnelVision"
