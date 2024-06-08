@@ -1,6 +1,6 @@
 {
   "name": "@cbarkr/react-tunnel-vision",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A mouse/touch-tracing tunnel vision effect for React components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
