@@ -2,6 +2,10 @@
 
 A mouse/touch-tracing tunnel vision effect for React components
 
+## Demo
+
+https://cbarkr.github.io/react-tunnel-vision-demo/
+
 ## Installation
 
 ```bash
