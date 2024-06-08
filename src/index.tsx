@@ -1,4 +1,5 @@
 import React, {
+  CSSProperties,
   ComponentPropsWithoutRef,
   RefObject,
   useEffect,
@@ -17,6 +18,7 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
     className = '',
     style,
     children,
+    ...rest
   } = props;
 
   const element = useRef<HTMLDivElement>(null);
@@ -39,8 +41,10 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
       requestAnimationFrame(() => {
         if (!element.current) return;
 
-        const x = event.clientX;
-        const y = event.clientY;
+        const bounds = element.current.getBoundingClientRect();
+
+        const x = event.clientX - bounds.left;
+        const y = event.clientY - bounds.top;
 
         setStyling(element, x, y);
       });
@@ -51,8 +55,10 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
       requestAnimationFrame(() => {
         if (!element.current) return;
 
-        const x = event.targetTouches[0].clientX;
-        const y = event.targetTouches[0].clientY;
+        const bounds = element.current.getBoundingClientRect();
+
+        const x = event.targetTouches[0].clientX - bounds.left;
+        const y = event.targetTouches[0].clientY - bounds.top;
 
         setStyling(element, x, y);
       });
@@ -71,7 +77,7 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
       window.removeEventListener('touchmove', handleTouch);
       window.removeEventListener('touchend', handleTouch);
     };
-  }, []);
+  }, [props]);
 
   return (
     <div className="relative" style={{ display: 'grid' }}>
@@ -80,9 +86,14 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
           ref={element}
           className="absolute h-full w-full pointer-events-none mix-blend-multiply z-50"
           style={{ gridArea: '1/1/1/1' }}
+          {...rest}
         />
       )}
-      <div className={className} style={{ ...style, gridArea: '1/1/1/1' }}>
+      <div
+        className={className}
+        style={{ ...style, gridArea: '1/1/1/1' } as CSSProperties}
+        {...rest}
+      >
         {children}
       </div>
     </div>
