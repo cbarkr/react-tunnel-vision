@@ -40,6 +40,7 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
       if (!isEnabled) return;
       requestAnimationFrame(() => {
         if (!element.current) return;
+        if (!event) return;
 
         const bounds = element.current.getBoundingClientRect();
 
@@ -54,6 +55,8 @@ export const TunnelVisionArea: React.FC<ITunnelVisionAreaProps> = (props) => {
       if (!isEnabled) return;
       requestAnimationFrame(() => {
         if (!element.current) return;
+        if (!event) return;
+        if (!event.targetTouches[0]) return;
 
         const bounds = element.current.getBoundingClientRect();
 
