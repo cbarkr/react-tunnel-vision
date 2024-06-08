@@ -4,7 +4,9 @@ A mouse/touch-tracing tunnel vision effect for React components
 
 ## Installation
 
-- [ ] TODO
+```bash
+npm install @cbarkr/react-tunnel-vision
+```
 
 ## Usage
 
